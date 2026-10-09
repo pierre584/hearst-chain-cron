@@ -9,7 +9,7 @@ Toutes les 5 minutes, elle prend le code de [Hearst-Corporation/hearst-connect-v
 
 | | Adresse (Sepolia) |
 |---|---|
-| HearstReserveRegistry | `0x0d0756DfB37F8162Cb7bA633912772D3D4545d62` |
+| HearstReserveRegistry | `0x32faB21D6Ad0c01c62b3076409b7fAd802007144` |
 | HearstMiningOracle | `0x489C70Bf7892F6B0F44e318F206a5BB11C3c127e` |
 | Publication (HEARST CONNECT B) | `0xc4197d502133ECAf7983663E69BA4b895831196D` |
 
