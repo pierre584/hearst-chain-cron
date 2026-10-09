@@ -13,4 +13,4 @@ Toutes les 5 minutes, elle prend le code de [Hearst-Corporation/hearst-connect-v
 | HearstMiningOracle | `0x489C70Bf7892F6B0F44e318F206a5BB11C3c127e` |
 | Publication (HEARST CONNECT B) | `0xc4197d502133ECAf7983663E69BA4b895831196D` |
 
-Le dépôt est public pour que GitHub Actions soit illimité ; la clé n'y figure pas. Secret requis : `HEARST_PUBLISHER_KEY` (Settings → Secrets and variables → Actions), la clé privée du compte de publication. Lancer à la main : onglet Actions → « Hearst chain (Sepolia) » → Run workflow.
+Le dépôt est public pour que GitHub Actions soit illimité ; la clé n'y figure pas. Secrets requis : `HEARST_PUBLISHER_KEY` et `HEARST_RPC_URL` (accès Alchemy Sepolia) (Settings → Secrets and variables → Actions), la clé privée du compte de publication. Lancer à la main : onglet Actions → « Hearst chain (Sepolia) » → Run workflow.
