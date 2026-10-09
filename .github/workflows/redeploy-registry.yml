@@ -1,0 +1,35 @@
+# Ponctuel (9 octobre 2026) : redéploie HearstReserveRegistry sur Sepolia et republie les mois de la démo,
+# dont l'empreinte de rapport inclut désormais les transactions Fireblocks. Supprimé après usage.
+name: Redeploy registry (one-off)
+on:
+  workflow_dispatch:
+concurrency:
+  group: hearst-chain
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: Hearst-Corporation/hearst-connect-v1
+          ref: v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: corepack enable && pnpm install --frozen-lockfile --ignore-scripts
+      - uses: foundry-rs/foundry-toolchain@v1
+      - name: Déployer le registre et publier les mois
+        env:
+          HEARST_PUBLISHER_KEY: ${{ secrets.HEARST_PUBLISHER_KEY }}
+        run: |
+          node scripts/demo-chain.mjs \
+            --rpc-url https://ethereum-sepolia-rpc.publicnode.com \
+            --private-key-env HEARST_PUBLISHER_KEY \
+            --admin 0xF4B2719bD911f3D2D52Ee108c8CaFb8570f63c0c \
+            --publisher-address 0xc4197d502133ECAf7983663E69BA4b895831196D \
+            --oracle 0x489C70Bf7892F6B0F44e318F206a5BB11C3c127e \
+            --network-if-changed
