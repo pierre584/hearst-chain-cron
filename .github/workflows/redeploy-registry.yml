@@ -22,6 +22,8 @@ jobs:
           node-version: 24
       - run: corepack enable && pnpm install --frozen-lockfile --ignore-scripts
       - uses: foundry-rs/foundry-toolchain@v1
+      - name: Bibliothèques des contrats (OpenZeppelin, forge-std)
+        run: cd contracts && forge soldeer install
       - name: Déployer le registre et publier les mois
         env:
           HEARST_PUBLISHER_KEY: ${{ secrets.HEARST_PUBLISHER_KEY }}
