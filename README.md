@@ -1,8 +1,8 @@
 # hearst-chain-cron
 
-La tâche horaire de la chaîne Hearst sur Sepolia, exécutée par GitHub Actions.
+La tâche planifiée de la chaîne Hearst sur Sepolia, exécutée par GitHub Actions.
 
-Chaque heure, elle prend le code de [Hearst-Corporation/hearst-connect-v1](https://github.com/Hearst-Corporation/hearst-connect-v1) (branche `v2`) et lance `scripts/demo-chain.mjs` :
+Toutes les 30 minutes, elle prend le code de [Hearst-Corporation/hearst-connect-v1](https://github.com/Hearst-Corporation/hearst-connect-v1) (branche `v2`) et lance `scripts/demo-chain.mjs` :
 
 1. publie dans `HearstReserveRegistry` les mois clos pas encore attestés ;
 2. publie dans `HearstMiningOracle` les relevés du réseau bitcoin.
